@@ -6,12 +6,12 @@
     <title>Redirecting…</title>
     <script>
         (function (l) {
-            var repo = "/test";
+            var repo = "/test"; // 리포 이름 맞춰 변경
             var path = l.pathname;
             var search = l.search || "";
             var hash = l.hash || "";
             if (path.indexOf(repo) === 0) path = path.slice(repo.length);
-            // 404로 온 경로를 index.html로 넘기되, 원래 경로는 ?p= 에 담는다
+            // index.html로 보내면서 원래 경로를 ?p=에 저장
             l.replace(repo + "/?p=" + encodeURIComponent(path + search + hash));
         })(window.location);
     </script>
